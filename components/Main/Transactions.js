@@ -299,7 +299,7 @@ export function Transactions() {
       >
         <Icon
           fontSize="2xl"
-          as={tableIsShow ? FiChevronDown : FiChevronUp}
+          as={tableIsShow ? FiChevronUp : FiChevronDown}
         ></Icon>
       </Center>
     </Flex>

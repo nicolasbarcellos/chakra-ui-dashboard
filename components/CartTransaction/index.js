@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
 import Search from "./Search";
-import { Card } from "./Card";
+import { CardColumn } from "./CardColumn";
 
 export function CartTransaction() {
   return (
@@ -14,7 +14,7 @@ export function CartTransaction() {
       bg="gray.100"
     >
       <Search />
-      <Card />
+      <CardColumn />
     </Flex>
   );
 }

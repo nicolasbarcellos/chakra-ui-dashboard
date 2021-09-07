@@ -1,14 +1,27 @@
 import { Avatar, Flex, Text } from "@chakra-ui/react";
 
-export default function AvatarSidebar() {
+export default function AvatarSidebar({ isLargerThan990 }) {
+  console.log(isLargerThan990)
   return (
-    <Flex alignItems="center" direction="column" mt="auto" mb="20">
+    <Flex
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      mt="auto"
+      mb="20"
+    >
       <Avatar
         name="Nicolas Barcellos"
         src="https://github.com/nicolasbarcellos.png"
         my="2"
       ></Avatar>
-      <Text fontWeight="bold">Nicolas Barcellos</Text>
+      <Text
+        textAlign="center"
+        fontSize={isLargerThan990 ? "md" : "x-small"}
+        fontWeight="bold"
+      >
+        Nicolas Barcellos
+      </Text>
     </Flex>
   );
 }

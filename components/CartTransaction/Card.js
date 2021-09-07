@@ -42,7 +42,7 @@ export function Card({ value }) {
             </HStack>
           </Flex>
 
-          <Text fontWeight="bold" fontSize="2xl">
+          <Text fontWeight="bold" fontSize={['sm', 'md', 'md', "2xl"]}>
             $5.750.20
           </Text>
 
@@ -53,7 +53,12 @@ export function Card({ value }) {
           </Flex>
 
           <Flex alignItems="center" justifyContent="space-between">
-            <Flex flexDir="column" alignItems="center" justifyContent="center">
+            <Flex
+              wrap="nowrap"
+              flexDir="column"
+              alignItems="center"
+              justifyContent="center"
+            >
               <Text color="whiteAlpha.700" fontSize="xx-small">
                 VALID THRU
               </Text>
@@ -62,27 +67,36 @@ export function Card({ value }) {
               </Text>
             </Flex>
 
-            <Flex alignItems="center" justifyContent="center" flexDir="column">
+            <Flex
+              alignItems="center"
+              justifyContent="center"
+              flexDir="column"
+              wrap="nowrap"
+            >
               <Text color="whiteAlpha.700" fontSize="xx-small">
                 CVV
               </Text>
-              <Text>***</Text>
+              <Text fontSize="sm">***</Text>
             </Flex>
 
-            <Box w="20" h="20">
-              <Image src="mastercard.svg" alt="mastercard"></Image>
+            <Box w={'20'} h={'20'}>
+              <Image
+                objectFit="cover"
+                src="mastercard.svg"
+                alt="mastercard"
+              ></Image>
             </Box>
           </Flex>
         </Box>
       )}
-         {value === 2 && (
+      {value === 2 && (
         <Box
           color="white"
           p="6"
           borderRadius="2xl"
           h="200px"
           w="100%"
-          bgGradient='linear(to-t, yellow.300, blue.500 )'
+          bgGradient="linear(to-t, yellow.300, blue.500 )"
         >
           <Flex justifyContent="space-between" alignItems="center">
             <Heading
@@ -127,7 +141,7 @@ export function Card({ value }) {
               <Text color="whiteAlpha.700" fontSize="xx-small">
                 CVV
               </Text>
-              <Text>***</Text>
+              <Text fontSize="sm">***</Text>
             </Flex>
 
             <Box w="20" h="20">
@@ -136,14 +150,14 @@ export function Card({ value }) {
           </Flex>
         </Box>
       )}
-          {value === 3 && (
+      {value === 3 && (
         <Box
           color="white"
           p="6"
           borderRadius="2xl"
           h="200px"
           w="100%"
-          bgGradient='linear(to-t, orange.300, pink.600 )'
+          bgGradient="linear(to-t, orange.300, pink.600 )"
         >
           <Flex justifyContent="space-between" alignItems="center">
             <Heading
@@ -188,7 +202,7 @@ export function Card({ value }) {
               <Text color="whiteAlpha.700" fontSize="xx-small">
                 CVV
               </Text>
-              <Text>***</Text>
+              <Text fontSize="sm">***</Text>
             </Flex>
 
             <Box w="20" h="20">

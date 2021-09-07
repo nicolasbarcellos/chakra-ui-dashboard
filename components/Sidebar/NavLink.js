@@ -1,16 +1,12 @@
-import { Link, Text, Icon } from "@chakra-ui/react";
+import { Link, Text, Icon, Box } from "@chakra-ui/react";
 
 export default function NavLink({ children, icon, isActive }) {
   return (
     <Link
-      _hover={{
-        textDecorationThickness: "3px",
-        textDecorationLine: "underline",
-        textDecorationColor: "pink.800",
-      }}
-      transition='all .4s'
-      width="100%"
-      display="flex"
+      _hover={{ textDecor: "none" }}
+      transition="all .4s"
+      w={["24px", '24px', '24px',  "100%"]}
+      h={["24px", '24px', '24px',  "100%"]}
     >
       <Icon
         color={isActive ? "pink.800" : "whiteAlpha.600"}
@@ -23,7 +19,8 @@ export default function NavLink({ children, icon, isActive }) {
         letterSpacing="tighter"
         fontWeight="black"
         display="inline-block"
-        color={isActive ? 'white' : 'whiteAlpha.600'}
+        color={isActive ? "white" : "whiteAlpha.600"}
+        _hover={{ color: "white" }}
       >
         {children}
       </Text>

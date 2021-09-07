@@ -1,46 +1,90 @@
-import { Flex, Heading, VStack } from "@chakra-ui/react";
-import { FiHome, FiPieChart, FiDollarSign, FiBox } from "react-icons/fi";
-import AvatarSidebar from "./Avatar";
+import {
+  Avatar,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
+  Text,
+  Icon,
+  IconButton,
+  useDisclosure,
+  useMediaQuery,
+} from "@chakra-ui/react";
+import { FiMenu } from "react-icons/fi";
 
-import NavLink from "./NavLink";
+import { SidebarNav } from "./Sidebar";
 
-export default function Sidebar() {
-  return (
-    <Flex
-   
-      flexBasis='200'
-      flexDir="column"
-      alignItems="center"
-      bgColor="blackAlpha.900"
-      color="white"
-    >
-      <Flex flexDir="column">
-        <Heading
-          letterSpacing="tight"
-          alignSelf="center"
-          mt={50}
-          mb={100}
-          fontSize="4xl"
+export default function Sidebar({ isLessThan880 }) {
+  const [isLargerThan990] = useMediaQuery("(min-width: 990px");
+  const [isLessThan460] = useMediaQuery("(max-width: 460px");
+
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
+  console.log(isOpen);
+
+  if (isLessThan460) {
+    return (
+      <>
+        <Flex
+          flexWrap="wrap"
+          h="20"
+          px="2"
+          w="100%"
+          color="white"
+          bg="blackAlpha.900"
+          alignItems="center"
+          justifyContent="space-around"
         >
-          Rise.
-        </Heading>
-
-        <Flex flexDir="column">
-          <VStack spacing={10}>
-            <NavLink isActive icon={FiHome}>
-              Home
-            </NavLink>
-
-            <NavLink icon={FiPieChart}>Credit</NavLink>
-
-            <NavLink icon={FiDollarSign}>Wallet</NavLink>
-
-            <NavLink icon={FiBox}>Services</NavLink>
-          </VStack>
+          <IconButton
+            aria-label="Open navigation"
+            onClick={onOpen}
+            variant="unstyled"
+            fontSize="24"
+            mr="2"
+            icon={<Icon as={FiMenu} />}
+          ></IconButton>
+          <Text fontSize="2xl" fontWeight="bold" letterSpacing="widest">
+            <span style={{ fontFamily: "Monoton" }}>R</span>
+            ise.
+          </Text>
+          <Flex flexDir="column" justifyContent="center" alignItems="center">
+            <Avatar
+              name="Nicolas Barcellos"
+              src="https://github.com/nicolasbarcellos.png"
+            ></Avatar>
+            <Text
+              ml="2"
+              mt="2"
+              textAlign="center"
+              fontSize={isLargerThan990 ? "md" : "x-small"}
+              fontWeight="bold"
+            >
+              Nicolas Barcellos
+            </Text>
+          </Flex>
         </Flex>
-      </Flex>
 
-      <AvatarSidebar />
-    </Flex>
+        <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+          <DrawerOverlay>
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader>Rise.</DrawerHeader>
+              <DrawerBody>
+                <SidebarNav />
+              </DrawerBody>
+            </DrawerContent>
+          </DrawerOverlay>
+        </Drawer>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SidebarNav />
+    </>
   );
 }

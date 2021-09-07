@@ -7,6 +7,10 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
+      body: {
+        overflowX:'hidden',
+        w:'100vw'
+      },
       th: {
         padding: 0,
       },

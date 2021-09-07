@@ -1,16 +1,25 @@
-import { Text, Box, Flex, Heading, HStack, List, ListItem } from "@chakra-ui/react";
+import {
+  Text,
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  List,
+  ListItem,
+} from "@chakra-ui/react";
 import { Chart } from "./Chart";
 import { Transactions } from "./Transactions";
 
-export function Main() {
+export function Main({ isLessThan830 }) {
   return (
     <Flex
-      flex="1"
+      flex={["1", "1", "1", "2"]}
       p="3%"
       flexDir="column"
-      overflow="auto"
+      overflow='auto'
+      // overflow={isLessThan830 ? 'normal': 'auto'}
       minW="400"
-      h='100vh'
+      h="100vh"
     >
       <Heading letterSpacing="wide" fontWeight="500" as="h2">
         Welcome back, <strong>Nicolas</strong>
@@ -23,7 +32,7 @@ export function Main() {
         w="100%"
         justifyContent="space-between"
       >
-        <Flex mb='1' align='center' justifyContent='space-between'>
+        <Flex mb="1" align="center" justifyContent="space-between">
           <Heading fontWeight="normal" color="gray.400" size="xs" as="h4">
             My Balance
           </Heading>
@@ -45,7 +54,9 @@ export function Main() {
             </HStack>
           </List>
         </Flex>
-        <Text mb='6' fontWeight='extrabold' fontSize='2xl'>$5.750.20</Text>
+        <Text mb="6" fontWeight="extrabold" fontSize="2xl">
+          $5.750.20
+        </Text>
         <Chart />
         <Transactions />
       </Flex>

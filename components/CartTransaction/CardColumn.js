@@ -9,10 +9,13 @@ import {
   Image,
   Divider,
   Avatar,
+  Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { FiCreditCard, FiPlus } from "react-icons/fi";
+import { FiCreditCard, FiPlus, FiDollarSign } from "react-icons/fi";
+
+import { InputChakra } from "./Input";
 
 import { Card } from "./Card";
 
@@ -103,7 +106,7 @@ export function CardColumn() {
         <Heading letterSpacing="wide" fontWeight="bold" fontSize="2xl" as="h3">
           Send money to
         </Heading>
-        <HStack mt="4" spacing="4">
+        <HStack mb="6" mt="4" spacing="4">
           <Avatar src="avatar-1.jpg"></Avatar>
           <Avatar src="avatar-2.jpg"></Avatar>
           <Avatar src="avatar-3.jpg"></Avatar>
@@ -115,6 +118,31 @@ export function CardColumn() {
           ></Icon>
         </HStack>
       </Box>
+      <InputChakra
+        variant="outline"
+        type="number"
+        icon={<FiCreditCard fontSize="20" color="#000" />}
+        label="Card number"
+        name="cardNumber"
+        placeholder="Type a card number..."
+      />
+      <InputChakra
+        variant="outline"
+        type="number"
+        icon={<FiDollarSign fontSize="20" color="#000" />}
+        label="Sum"
+        name="sum"
+        placeholder="Your sum amount..."
+        mb="6"
+      />
+      <Button
+        py={7}
+        _hover={{ bg: "blackAlpha.800" }}
+        color="white"
+        bg="blackAlpha.900"
+      >
+        Send money
+      </Button>
     </Stack>
   );
 }

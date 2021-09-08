@@ -23,7 +23,7 @@ export function CardColumn() {
   const [changeValue, setChangeValue] = useState(1);
 
   return (
-    <Stack mt="12" direction="column" spacing="4">
+    <Stack w='100vw' mx='auto' p={4} pb='8' bg='gray.100' mt="12" direction="column" spacing="4">
       <Heading letterSpacing="wide" fontSize="2xl" as="h3">
         My Cards
       </Heading>

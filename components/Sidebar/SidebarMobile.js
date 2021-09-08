@@ -30,12 +30,12 @@ export function SidebarMobile({ isLessThan880 }) {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (
-    <>
+    <Box bg='red'>
       <Flex
-        flexWrap="wrap"
         h="20"
         px="2"
-        w="100vw"
+        w="100%"
+        minW='100%'
         color="white"
         bg="blackAlpha.900"
         alignItems="center"
@@ -167,6 +167,6 @@ export function SidebarMobile({ isLessThan880 }) {
           </DrawerContent>
         </DrawerOverlay>
       </Drawer>
-    </>
+    </Box>
   );
 }

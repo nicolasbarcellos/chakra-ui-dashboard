@@ -4,7 +4,8 @@ import { SidebarDesktop } from "./SidebarDesktop";
 
 export default function Sidebar() {
   const [isLessThan460] = useMediaQuery("(max-width: 460px");
-  console.log(isLessThan460, 'teste')
 
-  return <SidebarDesktop />
+  return <>
+    <SidebarDesktop />
+  </>;
 }

@@ -6,7 +6,12 @@ import { InputChakra } from "./Input";
 
 export default function Search() {
   return (
-    <Flex alignItems="center" justifyContent="space-between">
+    <Flex
+      pt='6'
+      px='3'
+      alignItems="center"
+      justifyContent="space-between"
+    >
       <InputChakra
         // variant="unstyled"
         width="90%"

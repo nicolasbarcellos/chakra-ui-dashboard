@@ -9,10 +9,11 @@ export function CartTransaction({ isLessThan830 }) {
     mt={isLessThan830 && '50px'}
       flexDir="column"
       p="3%"
-      overflow={isLessThan830 ? 'normal': 'auto'}
 
       bg="gray.100"
-      flex="1"
+      bg='gray.100' 
+      w='100vw' 
+      mx='auto'
       w='100vw'
       h="100vh"
     >

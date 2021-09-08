@@ -9,7 +9,7 @@ export default function Dashboard() {
 
   return (
     <Flex
-      overflowX={isLessThan830 && "hidden"}
+      overflowX='auto'
       w="100vw"
       h="100vh"
       flexWrap="wrap"

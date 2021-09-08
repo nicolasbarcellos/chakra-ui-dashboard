@@ -31,7 +31,7 @@ export function SidebarNav() {
         <Flex flexDir="column" alignItems="center" justifyContent="center">
           <VStack spacing={10}>
             <NavLink isActive icon={FiHome}>
-              {isLargerThan990 && "Home"}
+              {isLargerThan990  && "Home"}
             </NavLink>
 
             <NavLink icon={FiPieChart}>{isLargerThan990 && "Credit"}</NavLink>

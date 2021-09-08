@@ -5,6 +5,7 @@ import {
   DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
+  Link,
   DrawerOverlay,
   Flex,
   Text,
@@ -12,8 +13,16 @@ import {
   IconButton,
   useDisclosure,
   useMediaQuery,
+  Heading,
+  VStack,
+  Box,
 } from "@chakra-ui/react";
 import { FiMenu } from "react-icons/fi";
+
+import AvatarSidebar from "./Avatar";
+import NavLink from "./NavLink";
+
+import { FiBox, FiDollarSign, FiHome, FiPieChart } from "react-icons/fi";
 
 import { SidebarNav } from "./Sidebar";
 
@@ -23,8 +32,6 @@ export default function Sidebar({ isLessThan880 }) {
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  console.log(isOpen);
-
   if (isLessThan460) {
     return (
       <>
@@ -32,7 +39,7 @@ export default function Sidebar({ isLessThan880 }) {
           flexWrap="wrap"
           h="20"
           px="2"
-          w="100%"
+          w="100vw"
           color="white"
           bg="blackAlpha.900"
           alignItems="center"
@@ -69,11 +76,98 @@ export default function Sidebar({ isLessThan880 }) {
 
         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
           <DrawerOverlay>
-            <DrawerContent>
+            <DrawerContent bg="blackAlpha.900" p={4} color="white">
               <DrawerCloseButton />
-              <DrawerHeader>Rise.</DrawerHeader>
               <DrawerBody>
-                <SidebarNav />
+                <Flex  flexDir="column">
+                  <Heading
+                    letterSpacing="tight"
+                    alignSelf="center"
+                    mt={10}
+                    mb={10}
+                    fontSize={"3xl"}
+                  >
+                    Rise.
+                  </Heading>
+                  <VStack
+                    w="100%"
+                    h="100%"
+                    alignItems="center"
+                    spacing={10}
+                    justifyContent="center"
+                  >
+                    <Flex alignItems="center" justifyContent="center">
+                      <Icon
+                        mr="4"
+                        fontSize="3xl"
+                        color={"pink.800"}
+                        as={FiHome}
+                      ></Icon>
+                      <Text
+                        fontWeight="bold"
+                        alignSelf="center"
+                        display="inline-block"
+                      >
+                        Home
+                      </Text>
+                    </Flex>
+
+                    <Flex alignItems="center">
+                      <Icon
+                        fontSize="3xl"
+                        mr="4"
+                        color={"whiteAlpha.600"}
+                        as={FiPieChart}
+                      ></Icon>
+                      <Text
+                        fontWeight="bold"
+                        alignSelf="center"
+                        display="inline-block"
+                        color="whiteAlpha.600"
+                      >
+                        Credit
+                      </Text>
+                    </Flex>
+
+                    <Flex alignItems="center">
+                      <Icon
+                        mr="4"
+                        fontSize="3xl"
+                        color={"whiteAlpha.600"}
+                        as={FiDollarSign}
+                      ></Icon>
+                      <Text
+                        fontWeight="bold"
+                        alignSelf="center"
+                        display="inline-block"
+                        color="whiteAlpha.600"
+                      >
+                        Wallet
+                      </Text>
+                    </Flex>
+
+                    <Flex justifyContent="center" alignItems="center">
+                      <Icon
+                        mr="4"
+                        fontSize="3xl"
+                        color={"whiteAlpha.600"}
+                        as={FiBox}
+                      ></Icon>
+                      <Text
+                        fontWeight="bold"
+                        alignSelf="center"
+                        display="inline-block"
+                        color="whiteAlpha.600"
+                      >
+                        Services
+                      </Text>
+                    </Flex>
+                  </VStack>
+                </Flex>
+                <Box mt='20'>
+                <AvatarSidebar />
+
+                </Box>
               </DrawerBody>
             </DrawerContent>
           </DrawerOverlay>

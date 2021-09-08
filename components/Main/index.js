@@ -16,10 +16,11 @@ export function Main({ isLessThan830 }) {
       flex={["1", "1", "1", "2"]}
       p="3%"
       flexDir="column"
-      overflow='auto'
-      // overflow={isLessThan830 ? 'normal': 'auto'}
+      mt={isLessThan830 && '30px'}
+      overflow={'auto'}
       minW="400"
       h="100vh"
+      w='100vw'
     >
       <Heading letterSpacing="wide" fontWeight="500" as="h2">
         Welcome back, <strong>Nicolas</strong>

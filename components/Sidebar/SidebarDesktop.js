@@ -1,16 +1,23 @@
-import { Flex, Heading, useMediaQuery, VStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  useBreakpointValue,
+  useMediaQuery,
+  VStack,
+} from "@chakra-ui/react";
 import AvatarSidebar from "./Avatar";
 import NavLink from "./NavLink";
 
 import { FiBox, FiDollarSign, FiHome, FiPieChart } from "react-icons/fi";
 
-export function SidebarNav() {
+export function SidebarDesktop() {
   const [isLargerThan990] = useMediaQuery("(min-width: 990px");
   const [isLessThan460] = useMediaQuery("(max-width: 460px");
 
   return (
     <Flex
-      w={isLessThan460 ? "100%" : "15%"}
+      display={isLessThan460 && 'none'}
+      w='15%'
       flexDir="column"
       alignItems="center"
       justifyContent="center"
@@ -31,7 +38,7 @@ export function SidebarNav() {
         <Flex flexDir="column" alignItems="center" justifyContent="center">
           <VStack spacing={10}>
             <NavLink isActive icon={FiHome}>
-              {isLargerThan990  && "Home"}
+              {isLargerThan990 && "Home"}
             </NavLink>
 
             <NavLink icon={FiPieChart}>{isLargerThan990 && "Credit"}</NavLink>

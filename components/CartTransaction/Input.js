@@ -20,8 +20,12 @@ export function InputChakra({
   ...rest
 }) {
   return (
-    <FormControl>
-      {!!label && <FormLabel fontSize='smaller' color='gray.500' htmlFor={name}>{label}</FormLabel>}
+    <FormControl >
+      {!!label && (
+        <FormLabel fontSize="smaller" color="gray.500" htmlFor={name}>
+          {label}
+        </FormLabel>
+      )}
       <InputGroup>
         <InputLeftElement
           pointerEvents="none"

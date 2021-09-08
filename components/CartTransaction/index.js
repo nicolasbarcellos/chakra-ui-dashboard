@@ -6,14 +6,12 @@ import { CardColumn } from "./CardColumn";
 export function CartTransaction({ isLessThan830 }) {
   return (
     <Flex
-    mt={isLessThan830 && '50px'}
+    // mt={isLessThan830 && '600px'}
       flexDir="column"
       p="3%"
-
+      overflow={isLessThan830 ? 'normal': 'auto'}
       bg="gray.100"
-      bg='gray.100' 
-      w='100vw' 
-      mx='auto'
+      flex="1"
       w='100vw'
       h="100vh"
     >

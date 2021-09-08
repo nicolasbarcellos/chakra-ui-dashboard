@@ -30,7 +30,7 @@ import {
 } from "react-icons/fi";
 import { SidebarMobile } from "./SidebarMobile";
 
-import styles from "../../pages/navbar.module.css";
+
 
 export function SidebarDesktop() {
   const [isLargerThan990] = useMediaQuery("(min-width: 990px");

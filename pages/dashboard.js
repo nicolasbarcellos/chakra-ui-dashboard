@@ -9,12 +9,12 @@ export default function Dashboard() {
 
   return (
     <Flex
-      overflowX='auto'
+      overflowX={isLessThan830 && "hidden"}
       w="100vw"
       h="100vh"
       flexWrap="wrap"
     >
-      <Sidebar  />
+      <Sidebar   />
       <Main isLessThan830={isLessThan830} />
       <CartTransaction isLessThan830={isLessThan830} />
     </Flex>

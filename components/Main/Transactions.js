@@ -45,21 +45,24 @@ export function Transactions() {
       <Table overflow="auto" variant="simple">
         <Thead>
           <Tr>
-            <Th color="gray.400" paddingInlineStart="0">
+            <Th
+              color="gray.400"
+             
+            >
               Name of transaction
             </Th>
             <Th color="gray.400">Category</Th>
             <Th color="gray.400" isNumeric>
               Cashback
             </Th>
-            <Th color="gray.400" paddingInlineEnd="0" isNumeric>
+            <Th color="gray.400"  isNumeric>
               Amount
             </Th>
           </Tr>
         </Thead>
         <Tbody>
           <Tr>
-            <Td paddingInlineStart="0">
+            <Td >
               <Flex alignItems="center">
                 <Image
                   display="inline-block"
@@ -79,7 +82,7 @@ export function Transactions() {
                 </Flex>
               </Flex>
             </Td>
-            <Td fontSize="smaller">
+            <Td px='6' fontSize={['x-small', 'small']}>
               <Box
                 mr="2"
                 verticalAlign="middle"
@@ -92,12 +95,12 @@ export function Transactions() {
               Electronic devices
             </Td>
             <Td isNumeric>+$2</Td>
-            <Td paddingInlineEnd="0" isNumeric>
+            <Td isNumeric>
               <strong>-$242.</strong>00
             </Td>
           </Tr>
           <Tr>
-            <Td paddingInlineStart="0">
+            <Td >
               <Flex alignItems="center">
                 <Image
                   display="inline-block"
@@ -117,7 +120,7 @@ export function Transactions() {
                 </Flex>
               </Flex>
             </Td>
-            <Td fontSize="smaller">
+            <Td fontSize={['x-small', 'small']}>
               <Box
                 mr="2"
                 verticalAlign="middle"
@@ -130,12 +133,12 @@ export function Transactions() {
               Cafe and restaurant
             </Td>
             <Td isNumeric>+$23</Td>
-            <Td paddingInlineEnd="0" isNumeric>
+            <Td  isNumeric>
               <strong>-$32.</strong>00
             </Td>
           </Tr>
           <Tr>
-            <Td paddingInlineStart="0">
+            <Td >
               <Flex alignItems="center">
                 <Image
                   display="inline-block"
@@ -155,7 +158,7 @@ export function Transactions() {
                 </Flex>
               </Flex>
             </Td>
-            <Td fontSize="smaller">
+            <Td fontSize={['x-small', 'small']}>
               <Box
                 mr="2"
                 verticalAlign="middle"
@@ -168,14 +171,14 @@ export function Transactions() {
               Social media
             </Td>
             <Td isNumeric>+$4</Td>
-            <Td paddingInlineEnd="0" isNumeric>
+            <Td isNumeric>
               <strong>-$112.</strong>00
             </Td>
           </Tr>
           {tableIsShow && (
             <>
               <Tr>
-                <Td paddingInlineStart="0">
+                <Td >
                   <Flex alignItems="center">
                     <Image
                       display="inline-block"
@@ -195,7 +198,7 @@ export function Transactions() {
                     </Flex>
                   </Flex>
                 </Td>
-                <Td fontSize="smaller">
+                <Td fontSize={['x-small', 'small']}>
                   <Box
                     mr="2"
                     verticalAlign="middle"
@@ -208,12 +211,12 @@ export function Transactions() {
                   Social media
                 </Td>
                 <Td isNumeric>+$4</Td>
-                <Td paddingInlineEnd="0" isNumeric>
+                <Td  isNumeric>
                   <strong>-$112.</strong>00
                 </Td>
               </Tr>
               <Tr>
-                <Td paddingInlineStart="0">
+                <Td >
                   <Flex alignItems="center">
                     <Image
                       display="inline-block"
@@ -233,7 +236,7 @@ export function Transactions() {
                     </Flex>
                   </Flex>
                 </Td>
-                <Td fontSize="smaller">
+                <Td fontSize={['x-small', 'small']}>
                   <Box
                     mr="2"
                     verticalAlign="middle"
@@ -246,12 +249,12 @@ export function Transactions() {
                   Social media
                 </Td>
                 <Td isNumeric>+$4</Td>
-                <Td paddingInlineEnd="0" isNumeric>
+                <Td  isNumeric>
                   <strong>-$112.</strong>00
                 </Td>
               </Tr>
               <Tr>
-                <Td paddingInlineStart="0">
+                <Td >
                   <Flex alignItems="center">
                     <Image
                       display="inline-block"
@@ -271,7 +274,7 @@ export function Transactions() {
                     </Flex>
                   </Flex>
                 </Td>
-                <Td fontSize="smaller">
+                <Td fontSize={['x-small', 'small']}>
                   <Box
                     mr="2"
                     verticalAlign="middle"
@@ -284,7 +287,7 @@ export function Transactions() {
                   Social media
                 </Td>
                 <Td isNumeric>+$4</Td>
-                <Td paddingInlineEnd="0" isNumeric>
+                <Td isNumeric>
                   <strong>-$112.</strong>00
                 </Td>
               </Tr>

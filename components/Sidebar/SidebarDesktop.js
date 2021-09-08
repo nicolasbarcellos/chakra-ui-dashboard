@@ -4,20 +4,42 @@ import {
   useBreakpointValue,
   useMediaQuery,
   VStack,
+  IconButton,
+  useDisclosure,
+  Icon,
+  Avatar,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  Link,
+  Box,
+  Text,
+  DrawerOverlay,
 } from "@chakra-ui/react";
 import AvatarSidebar from "./Avatar";
 import NavLink from "./NavLink";
 
-import { FiBox, FiDollarSign, FiHome, FiPieChart } from "react-icons/fi";
+import {
+  FiBox,
+  FiDollarSign,
+  FiHome,
+  FiPieChart,
+  FiMenu,
+} from "react-icons/fi";
+import { SidebarMobile } from "./SidebarMobile";
 
 export function SidebarDesktop() {
   const [isLargerThan990] = useMediaQuery("(min-width: 990px");
   const [isLessThan460] = useMediaQuery("(max-width: 460px");
 
-  return (
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
+  return  (
+    <>
     <Flex
-      display={isLessThan460 && 'none'}
-      w='15%'
+      w="15%"
       flexDir="column"
       alignItems="center"
       justifyContent="center"
@@ -52,5 +74,7 @@ export function SidebarDesktop() {
 
       <AvatarSidebar isLargerThan990={isLargerThan990} />
     </Flex>
+
+    </>
   );
 }
